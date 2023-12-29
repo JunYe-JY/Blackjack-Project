@@ -2,6 +2,7 @@
 
 # Blackjack Game
 This is a simple command-line-based Blackjack game implemented in C++. The game includes basic functionality for player actions such as betting, receiving loans, and playing the core Blackjack game against the dealer.
+This is programming using Object-Oriented Programming utilizing the encapsilation of data and behaviors, as well as procedural programming in utility functions.
 
 # How to Play
 Run the Game: Compile and run the game using a C++ compiler.
@@ -25,7 +26,7 @@ Loans: If you run out of money, you can choose to get a loan. However, keep in m
 
 Game Logic: The game follows standard Blackjack rules, with actions such as hitting, standing, and determining the winner based on hand values.
 
-#Files
+# Files
 blackjack.hpp: Header file containing the BlackJack class and related enumerations.
 blackjack.cpp: Implementation file for the BlackJack class.
 utilities.hpp: Header file containing the UserData class, utility functions, and card-related enumerations.
