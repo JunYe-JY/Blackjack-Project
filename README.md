@@ -2,7 +2,7 @@
 
 # Blackjack Game
 This is a simple command-line-based Blackjack game implemented in C++. The game includes basic functionality for player actions such as betting, receiving loans, and playing the core Blackjack game against the dealer.
-This is programming using Object-Oriented Programming utilizing the encapsilation of data and behaviors, as well as procedural programming in utility functions.
+This is programmed using Object-Oriented Programming utilizing the encapsilation of data and behaviors, as well as procedural programming in utility functions.
 
 # How to Play
 Run the Game: Compile and run the game using a C++ compiler.
