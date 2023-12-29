@@ -28,8 +28,13 @@ Game Logic: The game follows standard Blackjack rules, with actions such as hitt
 
 # Files
 blackjack.hpp: Header file containing the BlackJack class and related enumerations.
+
 blackjack.cpp: Implementation file for the BlackJack class.
+
 utilities.hpp: Header file containing the UserData class, utility functions, and card-related enumerations.
+
 utilities.cpp: Implementation file for the UserData class and utility functions.
+
 json.hpp: External library for handling JSON data.
+
 main.cpp: Main program file that includes the game loop.
