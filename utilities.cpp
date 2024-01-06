@@ -32,6 +32,7 @@ void UserData::getData() {
     setName(userData["Name"]);
     setMoney(userData["Money"]);
     setLoan(userData["Loan"]);
+    cin.clear();
 }
 
 void UserData::bet() {
@@ -49,6 +50,8 @@ void UserData::bet() {
             exit(1);
         }
     }
+    // Retrieve data and renew previous data;
+    getData();
     // Check if the user has an outstanding loan
     if (loanAmount > 0) {
         cout << "You currently have: $" << money << "\n";
@@ -60,7 +63,7 @@ void UserData::bet() {
         }
     }
     // Display the current amount of money
-    cout << "Current amount: $" << money << "\n";
+    cout << "\nCurrent amount: $" << money << "\n";
     // Prompt the user to enter the bet amount
     cout << "How much do you want to bet?: ";
     cin >> amount;
@@ -69,7 +72,7 @@ void UserData::bet() {
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
     // Validate the entered amount
     while (!cin || amount <= 0 || amount > money) {
-        cout << "Invalid input! Please enter a number greater than zero and less than your current balance." << endl;
+        cout << "Invalid input! Please enter a number greater than zero and less than your current balance: " << endl;
         // Prompt the user to enter a valid bet amount
         cin >> amount;
         // Clear the input buffer
@@ -88,21 +91,21 @@ bool checkInput() {
     string input;
     do {
         // Get input from the user
-        getline(cin, input);
+        cin >> input;
         // Check if the input is 'yes' or 'y' or 'Yes'
         if (input == "yes" || input == "y" || input == "Yes") {
-            cout << "\n";
+            cout << endl;
             return true;
         }
         // Check if the input is 'no' or 'n' or 'No'
         else if (input == "no" || input == "n" || input == "No") {
             return false;
         }
-        // If the input is not valid, prompt the user to enter [yes/no] again
+        // If the input is not valid, prompt the user to enter [Yes/No] again
         else {
-            cout << "Invalid input... Please enter [yes/no]: ";
+            cout << "[checkInput]Invalid input... Please enter [Yes/No]: ";
         }
-    } while (input != "yes" || input != "y" || input != "Yes" || input != "no" || input != "n" || input != "No");
+    } while (input != "yes" && input != "y" && input != "Yes" && input != "no" && input != "n" && input != "No");
     // The loop continues until valid input is provided, and the function returns true or false accordingly
     return false;
 }
@@ -186,12 +189,12 @@ void UserData::savePoint() {
 void UserData::loan() {
     double loan;
     // Prompt the user to enter the loan amount
-    cout << "How much would you like to loan?: ";
+    cout << "How much of would you like to receive?: ";
     cin >> loan;
     // Validate the entered loan amount
     while (cin.fail() || loan < 0 || loan > 3000) {
-        cin.clear();
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        //cin.clear();
+        //cin.ignore(numeric_limits<streamsize>::max(), '\n');
         cout << "Please enter a loan greater than $0 and less than $3000: ";
         cin >> loan;
     }
@@ -214,6 +217,8 @@ void UserData::loan() {
         exit(1);
     }
     cout << "Loan of $" << loan << " has been received." << endl;
+            cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
 }
 
 void UserData::payLoan() {
